@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React-Demo</title>
+  <script src="https://cdn.bootcss.com/react/15.3.2/react.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.3.2/react-dom.js"></script>
+  <script src="js/browser.min.js"></script>
+</head>
+<body>
+  <div id="root">
+    <!-- <ul id="ulBox">
+
+    </ul> -->
+  </div>
+
+  <script type="text/babel">
+  //数组如何渲染到页面中
+    var App = React.createClass({
+      getInitialState:function(){
+        return{     //return一个对象
+          list: ['回锅肉','西红柿炒鸡蛋','剁椒鱼头','农家小炒肉']    //初始化一个列表
+        }
+      },
+      render: function(){
+        var list = this.state.list;   //拿到初始化对象里的数组list
+        console.log(list);
+        return(
+          <div>
+              <ul>
+                {
+                  list.map(function(item,index){  //遍历map() 并发  return每个item（下标）对应的值
+                    return(
+                      <li key={index}>{item}</li>  //react建议凡是一个列表  加一个key  更新时保证性能  最快找到节点更新数据
+                    )
+                  })            //{}内写js语句
+                }
+              </ul>
+          </div>
+        )
+      }
+    })
+
+    ReactDOM.render(
+      <App/>,
+      document.getElementById('root')
+    );
+  </script>
+  <!--  传统写法
+   <script type="text/javascript">
+    var list = ['回锅肉','西红柿炒鸡蛋','剁椒鱼头','农家小炒肉'];
+    var html = '';
+    for(var i = 0;i<list.length;i++){
+      var item = list[i];
+      html+='<li>'+item+'</li>';
+    }
+    $('#root').append(html);
+  </script> -->
+</body>
+</html>

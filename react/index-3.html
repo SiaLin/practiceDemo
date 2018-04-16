@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React-Demo</title>
+  <script src="https://cdn.bootcss.com/react/15.3.2/react.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.3.2/react-dom.js"></script>
+  <script src="js/browser.min.js"></script>
+</head>
+<body>
+  <div id="root">
+  </div>
+
+  <script type="text/babel">
+  //数组如何渲染到页面中
+    var App = React.createClass({
+      //getInitialState,render 其他均为自定义
+      getInitialState:function(){
+        return{     //return一个对象 => 组件的初始值
+          inputValue:'',
+          list:[]
+        }
+      },
+      //自己定义一个函数
+      onInputChange:function(event){
+        console.log(event.target.value);   //target 事件属性可返回事件的目标节点（触发该事件的节点），如生成事件的元素、文档或窗口
+        // var value = this.state.inputValue;   //调用getInitialState  return对象里对应的值
+        // var list = this.state.list;
+        var value = event.target.value;
+        this.setState({             //setState()react自带改变初始值的一个方法
+          inputValue:value
+        })
+      },
+      // 实时改变输入值并在页面显示    有东西在变化（input框输入内容），把变化的内容改变到getInitialState  setState()，html页面引用this.state.-->
+      render: function(){
+        return(
+          <div>
+            <input type="text" onChange={this.onInputChange}/>
+            <p>当前正在输入的内容：{this.state.inputValue}</p>
+          </div>
+        )
+      }
+    })
+
+    ReactDOM.render(
+      <App/>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
