@@ -1,0 +1,27 @@
+新建一个webpack.config.js文件，
+
+初始化  npm init
+
+安装webpack   npm install webpack --save-dev
+
+命令行输入 webpack    ==>  找不到就全局安装(是为能够执行webpack命令，每个项目都必须重新安装)npm install -g webpack  安装后继续输入webpack     是否安装==>安装失败 ==>全局安装webpack-cli
+
+新建dist文件夹
+
+再次执行webpack命令（在命令行输入webpack)   ===>打包完毕
+
+安装包   npm install -S babel-loader babel-preset-es2015 babel-preset-stage-0 babel-preset-react
+
+webpack --mode=development
+
+安装 npm install -g webpack-dev-server
+
+启动  webpack-dev-server --mode=development（命令行输入）
+
+还没去读html   安装对应的包 
+
+
+main.js写入模块加载函数  数组传入js模块  共同的方法会被抽出来
+
+
+脚手架   一键生成
