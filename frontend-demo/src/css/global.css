@@ -1,0 +1,65 @@
+/*
+文本对其方式
+.text-left .text-right .text-center .text-justify .text-nowrap 
+
+英文单词大小写控制
+.text-lowercase .text-uppercase .text-capitalize
+
+文本颜色
+.text-muted .text-primary .text-success .text-info .text-warning .text-danger 
+
+背景色
+.bg-primary .bg-success .bg-info .bg-warning .bg-danger 
+
+三角符号
+.caret
+
+浮动
+pull-left
+pull-right
+
+块居中
+center-block
+
+浮动
+clearfix
+
+文字大小
+f-12 ~ f-36
+
+margin大小
+mt-5 ~ mt-50 (mt mb ml mr)
+
+padding大小
+pt-5 ~ pt-50 (mt mb ml mr)
+
+截断文本
+.line-clamp
+
+*/
+
+
+
+/* 圆角 */
+.border-radius-none{
+    border-radius: none !important;
+}
+.border-radius-xs{
+    border-radius: 4px !important;
+}
+.border-radius-sm{
+    border-radius: 6px !important;
+}
+.border-radius-md{
+    border-radius: 8px !important;
+}
+.border-round{
+    border-radius: 50% !important;
+}
+
+/* 定位 */
+.pos-r{position: relative;}
+.pos-a{position: absolute;}
+.pos-f{position: fixed;}
+.z-index0{z-index: 0;}
+

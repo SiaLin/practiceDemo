@@ -18,7 +18,7 @@ webpack --mode=development
 
 启动  webpack-dev-server --mode=development（命令行输入）
 
-还没去读html   安装对应的包 
+还没去读html   安装对应的包
 
 
 main.js写入模块加载函数  数组传入js模块  共同的方法会被抽出来

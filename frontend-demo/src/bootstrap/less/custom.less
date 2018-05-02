@@ -1,0 +1,111 @@
+//
+// Grid system
+// --------------------------------------------------
+
+//mixins
+.make-block(@gutter: @grid-gutter-width) {
+  margin:  ceil((@gutter / -2));
+  &:extend(.clearfix all);
+}
+
+.make-custom-grid-columns(@name,@value) {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index) { // initial
+      @item: ~"@{name} .col-xs-@{index}, @{name} .col-sm-@{index}, @{name} .col-md-@{index}, @{name} .col-lg-@{index}, @{name} .col-sl-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+    @item: ~"@{name} .col-xs-@{index}, @{name} .col-sm-@{index}, @{name} .col-md-@{index}, @{name} .col-lg-@{index}, @{name} .col-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      position: relative;
+      // Prevent columns from collapsing when empty
+      min-height: 1px;
+      // Inner gutter via padding
+      padding-left:  ceil((@value / 2));
+      padding-right: floor((@value / 2));
+    }
+  }
+  .col(1); // kickstart it
+}
+
+.set-line(@val){
+    .line-space@{val}{
+      .make-row(@val * 1px);
+    }
+    .make-custom-grid-columns(".line-space@{val}",@val*1px);
+}
+.set-block(@val){
+    .block-space@{val}{
+      .make-block(@val * 1px);
+    }
+    .make-custom-grid-columns(".block-space@{val}",@val*1px);
+}
+
+//line
+.set-line(0);
+.set-line(2);
+.set-line(6);
+.set-line(10);
+.set-line(12);
+.set-line(16);
+.set-line(18);
+.set-line(20);
+.set-line(22);
+.set-line(28);
+.set-line(30);
+//block
+.set-block(1);
+.set-block(3);
+.set-block(5);
+.set-block(10);
+.set-block(12);
+.set-block(16);
+.set-block(18);
+.set-block(20);
+.set-block(22);
+.set-block(28);
+.set-block(30);
+
+//
+// type system
+// --------------------------------------------------
+/*设置字体大小 f-12~ f36 */
+.generate-font-size(){
+    .make-f(@size) when(@size<=36){
+        .f-@{size}{font-size: @size * 1px;}
+       .make-f(@size+2); 
+    }
+    .make-f(12);
+}
+.generate-font-size();
+/*设置margin大小 */
+.generate-margin(){
+    .make-m(@size) when(@size<=50){
+        .mt-@{size}{margin-top: @size * 1px;}
+        .mb-@{size}{margin-bottom: @size * 1px;}
+        .ml-@{size}{margin-left: @size * 1px;}
+        .mr-@{size}{margin-right: @size * 1px;}
+       .make-m(@size+5); 
+    }
+    .make-m(5);
+}
+.generate-margin();
+/*设置padding大小 */
+.generate-padding(){
+    .make-p(@size) when(@size<=50){
+        .pt-@{size}{margin-top: @size * 1px;}
+        .pb-@{size}{margin-bottom: @size * 1px;}
+        .pl-@{size}{margin-left: @size * 1px;}
+        .pr-@{size}{margin-right: @size * 1px;}
+       .make-p(@size+5); 
+    }
+    .make-p(5);
+}
+.generate-padding();
+/* 截断文本 */
+.line-clamp{
+    .text-overflow();
+}

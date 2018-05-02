@@ -1,0 +1,53 @@
+/* footer */
+.footer{background-color: #141416;color: #999;overflow: hidden;}
+.footer-logo{display: block;color: #fff;font-size: 36px;line-height: 1;margin-left: 20px;margin-top: 66px;}
+.footer-logo:hover{color: #fff !important;text-decoration: none !important;}
+.footer-contact{margin: 34px auto 42px 20px;font-size: 12px;line-height: 3.1}
+.footer-contact i{margin-right: 5px;vertical-align: -1px}
+
+.footer-right{padding-left: 30px;}
+.footer-right label{font-size: 18px;font-weight: normal;margin-bottom: 15px;color: #fff;}
+.footer-search{}
+.footer-search-input{float: left;border: 1px solid #fff;background-color: #000;color: #fff;outline: none;height: 37px;padding-left: 5px;font-size: 18px;margin-bottom: 10px;}
+.footer-search-button{float: left;height: 37px;width: 95px;background-color: #fff;font-size: 18px;color: #000;border: none;}
+.footer-about{margin-top: 10px;margin-bottom: 35px; overflow: hidden;}
+.footer-about>span{font-size: 16px;float: left;line-height: 1;margin-top: 15px;margin-left: 2px;margin-right: 18px;}
+.footer-about>.weibo,.footer-about>.weixin{
+    width: 44px;height: 44px;float: left;
+}
+.footer-about>.weibo{background: url(images/footer-icon.png) -88px 0 no-repeat }
+.footer-about>.weixin{background: url(images/footer-icon.png) -132px 0 no-repeat }
+
+.footer-about>.weibo:hover{background: url(images/footer-icon.png) no-repeat }
+.footer-about>.weixin:hover{background: url(images/footer-icon.png) -44px 0 no-repeat }
+
+
+
+.copyright{height: 66px;background-color: #0b0b0d;color: #fff;text-align: center;line-height: 2}
+
+
+@media(min-width:480px){
+    .footer-contact{margin-left: 50px; font-size: 16px;} 
+    .footer-contact i{margin-right: 32px;}
+    
+    .footer-right{padding-left: 60px;}
+}
+@media(min-width:768px){
+    .footer-contact{margin-left: 30px; font-size: 14px;} 
+    .footer-contact i{margin-right: 10px;}
+    
+    .footer-right{padding-left: 30px;}
+    .footer-right label{margin-top: 80px;}
+    
+    .copyright{line-height: 66px;}
+}
+@media(min-width:992px){
+    .footer-contact{margin-left: 50px; font-size: 16px;} 
+    .footer-contact i{margin-right: 32px;}
+    
+    .footer-right{padding-left: 60px;}
+}
+@media(min-width:1200px){
+    .footer-right{padding-left: 160px;}
+    .footer-search-input{width: 330px;}
+}
