@@ -1,0 +1,560 @@
+/*重置样式*/
+
+body, div, p, ul, ol, dl, dt, dd, li, form, input, table, th, td, img, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-family: "Microsoft Yahei";
+}
+
+p {
+  line-height: 1.6
+}
+
+h1, h2, h3 {
+  line-height: 2
+}
+
+em, b, i {
+  font-style: normal;
+}
+
+img {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: underline;
+  color:  #cc0000;
+}
+
+li {
+  list-style: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.bg-grey{
+  background-color: #f0f2f4;
+}
+/*清除浮动*/
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*the end*/
+
+.top {
+  height: 3px;
+  background-color: #cc0000;
+}
+
+.header {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  float: left;
+  width: 110px;
+  height: 80px;
+  background: url(images/logo.png);
+}
+
+.nav {
+  float: right;
+  padding-right: 20px;
+}
+
+.nav a {
+  float: left;
+  padding: 0 20px;
+  height: 80px;
+  font-size: 16px;
+  line-height: 80px;
+  margin: 0 10px;
+}
+
+.nav a:hover {
+  color: #fff;
+  background: #cc0000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* focusbox */
+
+.focusbox {
+  height: 490px;
+  position: relative;
+  overflow: hidden;
+}
+
+.focusbox a{
+  display: block;
+  height: 490px;
+}
+
+.focusbox a *{
+  position: absolute;
+}
+
+.focusbox a h2{
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  margin: auto;
+  top: 200px;
+  color: #fff;
+}
+
+/* 给三个点包一个壳子div设宽设高,
+同时设置position为absolute，
+设置margin：auto，left：0；right：0；设置合适的bottom
+
+*/
+
+/* 宽度限制，假如多加一个焦点图，多出来的点会掉到下面
+第一种方案：兼容所用浏览器
+典型的绝对定位下的水平垂直居中
+.hd{position:absolute;width:?;height:?;
+margin:auto;left:0;right:0;top:0;bottom:0;}
+
+第二种方案
+利用了position：absolute时拉伸性
+利用了text-align对display：inline-block元素起作用
+
+相当于一般状态下div默认宽度为100%,子元素如果是inline-block,text-align起作用
+.hd{position: absolute;left: 0;right: 0;text-align: center;}
+
+.focusbox .hd{
+  position: absolute;
+  z-index: 100;
+  width: 100px;
+  height: 20px;
+  margin:auto;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+}
+
+.focusbox .hd li{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #cc0000;
+  float: left;
+  margin:0 10px;
+}
+*/
+
+/*
+不设置宽度，设置left: 0;right: 0;宽度默认为100%
+ */
+.focusbox .hd{
+  position: absolute;
+  z-index: 100;
+  height: 20px;
+  left: 0;
+  right: 0;
+  bottom:20px;
+  text-align: center;
+}
+
+.focusbox .hd li{
+  display: inline-block;   /*IE8不起作用 */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+  margin:0 10px;
+}
+
+.focusbox .hd li:hover{
+  background-color: #cc0000;
+}
+
+.focusbox .hd .on{
+  background-color: #cc0000;
+}
+
+/* service-tab */
+.service-tab{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.service-tab-subtit{
+  font-size: 18px;
+  color:  #cc0000;
+  margin-top: 30px;
+  line-height: 1; /* 跟字体大小一样 */
+  text-align: center;
+}
+
+.service-tab-tit{
+  font-size: 30px;
+  color: #3d3d3d;
+  line-height: 1;
+  margin-top: 17px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+/* margin 改变元素尺寸
+1.适用于没有设定width/height的普通block水平
+（指的左右，是与上下margin无关）元素，不包括行内元素（也不包括：浮动和绝对定位）
+2.只适用于水平方向的尺寸（垂直尺寸是不起作用的）
+*/
+.service-tab-list{
+  margin-left: -100px;
+}
+
+.service-tab-list a{
+  width: 450px;
+  height: 100px;
+  float: left;
+  margin-left: 100px;
+  margin-bottom: 23px;
+  text-decoration: none;
+}
+
+.service-tab-list .service-icon{
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.service-tab-list .service-icon-shangye{
+    background: url(images/big-icon.png) no-repeat;
+}
+
+.service-tab-list .service-icon-gongzhong{
+    background: url(images/big-icon.png) -100px 0 no-repeat;  /*图片在动 */
+}
+
+.service-tab-list .service-icon-bangong{
+    background: url(images/big-icon.png) -200px 0 no-repeat;
+}
+
+.service-tab-list .service-icon-zhuzhai{
+    background: url(images/big-icon.png) -300px 0 no-repeat;
+}
+
+.service-tab-list a:hover .service-icon-shangye{
+    background: url(images/big-icon.png) 0 -100px no-repeat;
+}
+
+.service-tab-list a:hover .service-icon-gongzhong{
+    background: url(images/big-icon.png) -100px -100px no-repeat;  /*图片在动 */
+}
+
+.service-tab-list a:hover .service-icon-bangong{
+    background: url(images/big-icon.png) -200px -100px no-repeat;
+}
+
+.service-tab-list a:hover .service-icon-zhuzhai{
+    background: url(images/big-icon.png) -300px -100px no-repeat;
+}
+
+.service-tab-list .info{
+  margin-left: 118px;
+  line-height: 2;
+  padding-top: 15px;
+}
+
+.service-tab-list .info .info-tit{
+  font-size: 16px;
+}
+
+/* project-tab */
+.project-tab{
+  width: 1000px;
+  margin:3px auto 0 auto;
+  overflow: hidden;
+}
+
+.project-tab h1{
+  margin-top: 24px;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+  font-weight: normal;
+}
+
+.project-tab-menu{
+  margin-top: 30px;
+  line-height: 1;
+  font-size: 14px;
+  color: #595959;
+  text-align: center;
+}
+
+.project-tab-menu a{
+  color: #595959;
+  text-decoration: none;
+}
+
+.project-tab-menu span{
+  margin: 0 8px;
+}
+
+/* project-tab-scroll */
+.project-tab-scroll{
+  margin-top: 40px;
+}
+
+.project-tab-scroll .bd{
+  margin-left:-17px;
+}
+
+.project-tab-scroll li{
+  float: left;
+  margin-left: 17px;
+  width: 237px;
+}
+
+/*
+提示：
+当一个元素被设置float为left的时候默认解释display：block
+
+a标签默认是行内元素，按照规范，块状元素里面包含块元素或行内元素，
+行内元素不能包含块状元素，所以把a标签转为块元素
+*/
+.project-tab-scroll li a{
+  display: block;
+  color: #1c1c1c;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.project-tab-scroll li .tit{
+  margin-top: 12px;
+  line-height: 20px;
+  height: 47px;
+}
+
+.project-tab-scroll .button{
+  width: 64px;
+  height: 21px;
+  margin:0 auto;
+}
+.project-tab-scroll .button a{
+  width: 21px;
+  height: 21px;
+  float: left;
+}
+
+.project-tab-scroll .button .prev{
+  margin-right: 22px;
+  background: url(images/button.png) no-repeat;
+}
+
+.project-tab-scroll .button .next{
+  background: url(images/button.png) -21px 0 no-repeat;
+}
+
+ /* news-tab */
+ .news-tab{
+   width: 1000px;
+   margin:65px auto 0 auto;
+ }
+
+ .news-tab-main{
+    width: 525px;
+   float: left;
+   padding-right: 58px;
+ }
+
+  .news-tab-main .title h2{
+    float: left;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1;
+  }
+
+ .news-tab-main .title >a{   /*子元素 */
+   float: left;
+  font-size: 14px;
+  color: #686868;
+  text-decoration: none;
+  line-height: 1;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+ .news-tab-main li{
+   margin-top: 26px;
+ }
+
+.news-tab-main li a{
+  display: block;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.news-tab-main li a:hover{
+  color: #000;
+}
+
+.news-tab-main li h4{
+  font-size: 14px;
+}
+
+.news-tab-main li p{
+ color: #666666;
+}
+
+ .news-tab-sidebar{
+   float: left;
+   padding-left: 42px;
+   border-left: 1px solid #ababab;
+   margin-top: 50px;
+   height: 175px;
+ }
+
+ .news-tab-sidebar p{
+   line-height: 2;
+
+ }
+
+ .news-tab-sidebar p:first-child{
+   margin-top: -6px;
+ }
+
+ .news-tab-sidebar h1{
+   font-size: 24px;
+   line-height: 2;
+   font-weight: normal;
+ }
+
+  .news-tab-sidebar h1 b{
+    font-weight: normal;
+    color: #cc0000;
+  }
+
+  .news-tab-sidebar .button{
+    display: block;
+    width: 79px;
+    height: 43px;
+    line-height: 43px;
+    font-size: 16px;
+    color: #fff;
+    padding-left: 44px;
+    text-decoration: none;
+    border-radius: 3px;
+    background: url(images/small-icon.png) 13px 11px no-repeat;
+    background-color: #69ba07;
+  }
+
+/* footer */
+
+.footer-main{
+  height: 215px;
+  background: #222222;
+}
+
+.footer-main-menu {
+  width: 1000px;
+  margin:0 auto;
+}
+
+.footer-main .footer-main-menu ul{
+  float: left;
+}
+
+.footer-main .footer-main-menu li a{
+  text-decoration: none;
+  color: #d4d4d4;
+}
+.footer-main .footer-main-menu li{
+  font-size: 12px;
+  padding-bottom: 10px;
+  font-weight: normal;
+}
+.footer-main .footer-main-menu li:first-child{
+  padding: 35px 0 20px 0;
+  font-size: 16px;
+}
+
+.footer-main .footer-main-menu  .fw{
+  padding-left:120px;
+}
+
+.footer-main .footer-main-menu  .lj{
+  padding-left: 105px;
+}
+
+.footer-main .footer-main-menu  .lx{
+  padding-left: 70px;
+  color: #ffffff;
+}
+
+.footer-main .footer-main-menu  .lx li a{
+  float: left;
+  width: 21px;
+  height: 21px;
+}
+
+.footer-main .footer-main-menu  .lx .one{
+  background: url(images/tag.png) no-repeat;
+}
+
+.footer-main .footer-main-menu  .lx .two{
+  background: url(images/tag.png) -21px 0 no-repeat;
+}
+
+.footer-main .footer-main-menu  .lx .three{
+  background: url(images/tag.png) -42px 0 no-repeat;
+}
+
+.footer-main .footer-main-menu  .lx .four{
+  background: url(images/tag.png) -63px 0 no-repeat;
+}
+
+.footer-main .footer-main-menu  .lx li:first-child{
+  color: #cc0000;
+}
+
+.footer-main .footer-main-menu .f-logo{
+  float: left;
+  margin: 80px 0 0 185px;
+}
+
+.footer-copyright{
+  height: 40px;
+  background: #101010;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  padding-top:14px;
+}
